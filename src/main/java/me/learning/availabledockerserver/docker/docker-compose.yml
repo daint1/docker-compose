@@ -1,15 +1,15 @@
 version: '3.1'
 services:
-  cloud-config:
-    container_name: cloud-config
-    image: cloud-config
-    depends_on:
-      - postgres
-    build:
-      context: ../docker
-      dockerfile: cloud-config.Dockerfile
-    ports:
-      - "8888:8888"
+#  cloud-config:
+#    container_name: cloud-config
+#    image: cloud-config
+#    depends_on:
+#      - postgres
+#    build:
+#      context: ../docker
+#      dockerfile: cloud-config.Dockerfile
+#    ports:
+#      - "8888:8888"
   eureka-server:
     container_name: eureka-server
     image: eureka-server
@@ -20,14 +20,14 @@ services:
       dockerfile: eureka-server.Dockerfile
     ports:
       - "8761:8761"
-  postgres:
-    image: postgres:13  # Use the desired version
-    environment:
-      POSTGRES_DB: cloud-config1  # Name of the database to be created on image startup
-      POSTGRES_USER: postgres      # PostgreSQL user
-      POSTGRES_PASSWORD: 123456  # PostgreSQL password
-    ports:
-      - "5433:5432"
+#  postgres:
+#    image: postgres:13  # Use the desired version
+#    environment:
+#      POSTGRES_DB: cloud-config1  # Name of the database to be created on image startup
+#      POSTGRES_USER: postgres      # PostgreSQL user
+#      POSTGRES_PASSWORD: 123456  # PostgreSQL password
+#    ports:
+#      - "5433:5432"
   redis:
     image: redis:latest
     ports:
